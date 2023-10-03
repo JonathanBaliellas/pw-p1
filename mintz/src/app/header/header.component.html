@@ -1,0 +1,28 @@
+<header class="w3-container w3-text-indigo">
+    <!-- LOGO -->
+    <a routerLink="">
+        <h1 class="w3-half w3-text-orange logo">🏵️<strong>Mintz<span class="w3-text-indigo"> Informática</span></strong></h1>
+    </a>
+
+    <div class="w3-half w3-container">
+        <!-- MENU -->
+        <nav class="w3-bar">
+            <div class="w3-right">
+                <a class="w3-button w3-bar-item" routerLink="produtos">Produtos</a>
+                <a class="w3-button w3-bar-item" routerLink="carrinho">Carrinho <i class="fa-solid fa-cart-shopping"></i><span class="quant-carrinho">{{carrinhoService.obterCarrinho().length}}</span></a>
+                <a class="w3-button w3-bar-item" routerLink="contatos">Contato</a>
+                <a class="w3-button w3-bar-item" href="#" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                <a class="w3-button w3-bar-item" href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a class="w3-button w3-bar-item" href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="w3-button w3-bar-item" routerLink="usuario"><i class="fa-regular fa-user"></i></a>
+            </div>
+        </nav>
+
+        <!-- BARRA DE BUSCA -->
+        <form action="">
+            <button class="w3-button w3-round-large w3-right"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" class="w3-border w3-round w3-right" style="width: 80%;">
+        </form>
+
+    </div>
+</header>
