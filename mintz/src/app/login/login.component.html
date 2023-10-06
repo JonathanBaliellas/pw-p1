@@ -2,43 +2,42 @@
     <h2 class="w3-text-indigo">Identificação</h2>
     <div id="container">
         <!-- Possui cadastro -->
-        <div class="w3-half w3-border-right w3-padding">
+        <form class="w3-half w3-border-right w3-padding">
             <h3 class="w3-text-indigo">Já tenho cadastro</h3>
             <div class="cadastro">
-                <input type="email" class="w3-input w3-border w3-round w3-margin" placeholder="Email">
-                <input type="password" class="w3-input w3-border w3-round w3-margin" placeholder="Senha">
+                <input type="email" class="w3-input w3-border w3-round w3-margin" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <input type="password" class="w3-input w3-border w3-round w3-margin" placeholder="Senha" required>
             </div>
-            <p><button class="w3-button w3-round w3-indigo" routerLink="/produtos">Entrar</button></p>
+            <p><button class="w3-button w3-round w3-indigo w3-hover-orange" routerLink="/produtos">Entrar</button></p>
             <p><button class="w3-button w3-hover-none w3-text-indigo w3-hover-text-orange" onclick="document.getElementById('divEsqueciSenha').style.display='block'">Esqueci minha senha</button></p>
-        </div>
+        </form>
     
         <!-- Não possui cadastro -->
         <div class="w3-half">
             <h3 class="w3-text-indigo">Ainda não tenho cadastro</h3>
-            <button class="w3-button w3-round w3-indigo" onclick="document.getElementById('divCadastro').style.display='block'">Cadastrar</button>
+            <button class="w3-button w3-round w3-indigo w3-hover-orange" onclick="document.getElementById('divCadastro').style.display='block'">Cadastrar</button>
         </div>
     </div>
 
     <!-- Modal Cadastro -->
-    <div class="w3-modal" id="divCadastro">
+    <div action="" class="w3-modal" id="divCadastro">
         <div class="w3-modal-content w3-card-4 w3-animate-top w3-round">
             <header class="w3-indigo w3-container modal-header">
                 <!-- Fechar -->
                 <span onclick="document.getElementById('divCadastro').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                 <h3>Cadastrar</h3>
             </header>
-            <div class="w3-container w3-padding cadastro">
-                <input type="text" class="w3-input w3-border w3-round w3-margin" placeholder="Nome">
-                <input type="email" class="w3-input w3-border w3-round w3-margin" placeholder="Email">
-                <input type="password" class="w3-input w3-border w3-round w3-margin" placeholder="Senha">
-                <input type="password" class="w3-input w3-border w3-round w3-margin" placeholder="Confirmar senha">
-                <input type="number" class="w3-input w3-border w3-round w3-margin" placeholder="CPF">
-                <input type="tel" class="w3-input w3-border w3-round w3-margin" placeholder="Telefone">
+            <form class="w3-container w3-padding cadastro">
+                <input type="text" class="w3-input w3-border w3-round w3-margin" placeholder="Nome" required pattern="[A-z\s]{6,100}">
+                <input type="email" class="w3-input w3-border w3-round w3-margin" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <input type="password" class="w3-input w3-border w3-round w3-margin" placeholder="Senha" required>
+                <input type="password" class="w3-input w3-border w3-round w3-margin" placeholder="Confirmar senha" required>
+                <input type="number" class="w3-input w3-border w3-round w3-margin" placeholder="CPF" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                <input type="tel" class="w3-input w3-border w3-round w3-margin" placeholder="Telefone" required pattern="[0-9]{4,5}-[0-9]{4}">
                 <div class="w3-padding">
-                    <button class="w3-button w3-indigo w3-round">Cadastrar</button>
-
+                    <button class="w3-button w3-indigo w3-round w3-hover-orange" (click)="cadastrar()">Cadastrar</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
@@ -49,14 +48,14 @@
                 <span onclick="document.getElementById('divEsqueciSenha').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                 <h3>Esqueci minha senha</h3>
             </header>
-            <div class="w3-container w3-padding cadastro">
+            <form class="w3-container w3-padding cadastro">
                 <p>Informe seu email para recuperar a senha</p>
-                <input type="email" class="w3-input w3-border w3-round w3-margin" placeholder="Email">
+                <input type="email" class="w3-input w3-border w3-round w3-margin" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                 <div class="w3-padding">
-                    <button class="w3-button w3-indigo w3-round">Recuperar senha</button>
+                    <button class="w3-button w3-indigo w3-round w3-hover-orange" (click)="recuperar()">Recuperar senha</button>
 
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>
