@@ -1,0 +1,62 @@
+<section class="w3-container w3-center w3-margin">
+    <h2 class="w3-text-indigo">Identificação</h2>
+    <div id="container">
+        <!-- Possui cadastro -->
+        <div class="w3-half w3-border-right w3-padding">
+            <h3 class="w3-text-indigo">Já tenho cadastro</h3>
+            <div class="cadastro">
+                <input type="email" class="w3-input w3-border w3-round w3-margin" placeholder="Email">
+                <input type="password" class="w3-input w3-border w3-round w3-margin" placeholder="Senha">
+            </div>
+            <p><button class="w3-button w3-round w3-indigo" routerLink="/produtos">Entrar</button></p>
+            <p><button class="w3-button w3-hover-none w3-text-indigo w3-hover-text-orange" onclick="document.getElementById('divEsqueciSenha').style.display='block'">Esqueci minha senha</button></p>
+        </div>
+    
+        <!-- Não possui cadastro -->
+        <div class="w3-half">
+            <h3 class="w3-text-indigo">Ainda não tenho cadastro</h3>
+            <button class="w3-button w3-round w3-indigo" onclick="document.getElementById('divCadastro').style.display='block'">Cadastrar</button>
+        </div>
+    </div>
+
+    <!-- Modal Cadastro -->
+    <div class="w3-modal" id="divCadastro">
+        <div class="w3-modal-content w3-card-4 w3-animate-top w3-round">
+            <header class="w3-indigo w3-container modal-header">
+                <!-- Fechar -->
+                <span onclick="document.getElementById('divCadastro').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h3>Cadastrar</h3>
+            </header>
+            <div class="w3-container w3-padding cadastro">
+                <input type="text" class="w3-input w3-border w3-round w3-margin" placeholder="Nome">
+                <input type="email" class="w3-input w3-border w3-round w3-margin" placeholder="Email">
+                <input type="password" class="w3-input w3-border w3-round w3-margin" placeholder="Senha">
+                <input type="password" class="w3-input w3-border w3-round w3-margin" placeholder="Confirmar senha">
+                <input type="number" class="w3-input w3-border w3-round w3-margin" placeholder="CPF">
+                <input type="tel" class="w3-input w3-border w3-round w3-margin" placeholder="Telefone">
+                <div class="w3-padding">
+                    <button class="w3-button w3-indigo w3-round">Cadastrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Esqueci a Senha -->
+    <div class="w3-modal" id="divEsqueciSenha">
+        <div class="w3-modal-content w3-card-4 w3-animate-top w3-round">
+            <header class="w3-indigo w3-container modal-header">
+                <span onclick="document.getElementById('divEsqueciSenha').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h3>Esqueci minha senha</h3>
+            </header>
+            <div class="w3-container w3-padding cadastro">
+                <p>Informe seu email para recuperar a senha</p>
+                <input type="email" class="w3-input w3-border w3-round w3-margin" placeholder="Email">
+                <div class="w3-padding">
+                    <button class="w3-button w3-indigo w3-round">Recuperar senha</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
